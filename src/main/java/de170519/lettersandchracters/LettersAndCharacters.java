@@ -16,6 +16,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LettersAndCharacters {
+    static Scanner sc = new Scanner(System.in);
+    static Map<String, Integer> wordCount = new HashMap<>();
+    static Map<Character, Integer> characterCount = new HashMap<>();
+    
     public static void main(String args[]) {
         // Nhận đầu vào từ người dùng
         String content = Input();
@@ -33,7 +37,6 @@ public class LettersAndCharacters {
     // Phương thức để nhận đầu vào từ người dùng
     public static String Input() {
         String s;
-        Scanner sc = new Scanner(System.in);
         s = sc.nextLine();
         return s;
     }
@@ -47,7 +50,7 @@ public class LettersAndCharacters {
 
     // Phương thức để đếm và in ra số lần xuất hiện của từng từ
     public static void countAndPrintWordOccurrences(String content) {
-        Map<String, Integer> wordCount = new HashMap<>();
+        
         StringTokenizer st = new StringTokenizer(content);
 
         while (st.hasMoreTokens()) {
@@ -63,7 +66,7 @@ public class LettersAndCharacters {
 
     // Phương thức để đếm và in ra số lần xuất hiện của các ký tự
     public static void countAndPrintCharacterOccurrences(String content) {
-        Map<Character, Integer> characterCount = new HashMap<>();
+        
         String lowerString = content.toLowerCase().replaceAll(" ", "");
 
         for (int i = 0; i < lowerString.length(); i++) {
